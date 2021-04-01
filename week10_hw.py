@@ -11,14 +11,17 @@ def crossed(x1,r1,x2,r2):
     #         if i==j:
     #             return True
     return False
-l = [1,5,2,1,4,0]
-cnt = 0
-for i in range(len(l)-1):
-    for j in range(i+1,len(l)):
-        if crossed(i,l[i],j,l[j]):
-            print(i,l[i],j,l[j])
-            cnt+=1
-print(cnt)
+def how_many_crossed(l = [1,5,2,1,4,0]):
+    cnt = 0
+    for i in range(len(l)-1):
+        for j in range(i+1,len(l)):
+            if crossed(i,l[i],j,l[j]):
+                print(i,l[i],j,l[j])
+                cnt+=1
+                if cnt>10**7:
+                    return -1
+    return cnt
+how_many_crossed()
 # print(crossed(0,1,2,1))
 
 def max_space(n):
